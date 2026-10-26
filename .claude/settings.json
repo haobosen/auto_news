@@ -1,0 +1,22 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(curl -s http://localhost:8000/api/weibo/check)",
+      "Bash(curl -s http://localhost:8000/api/weibo/login/status)",
+      "Bash(.venv/bin/python -m py_compile app/db.py app/main.py)",
+      "Bash(curl -s \"http://localhost:8000/api/posts?type=&limit=2&offset=0\")",
+      "Bash(.venv/bin/python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\('字段:', list\\(d[0].keys\\(\\)\\)[:20] if d else 'empty'\\); print\\('read 值:', [p.get\\('read'\\) for p in d]\\)\")",
+      "Bash(curl -s -X POST \"http://localhost:8000/api/posts/1/read\")",
+      "Bash(curl -s \"http://localhost:8000/api/posts/1\")",
+      "Bash(.venv/bin/python -c \"import sys,json; print\\('post 1 read =', json.load\\(sys.stdin\\).get\\('read'\\)\\)\")",
+      "Bash(.venv/bin/python -m py_compile app/db.py crawler/runner.py config.py)",
+      "Bash(.venv/bin/python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\('源数量:', len\\(d\\)\\); [print\\(f\\\\\"  {s['name']:14s} post_count={s.get\\('post_count'\\)}\\\\\"\\) for s in d[:6]]\")",
+      "Bash(.venv/bin/python -c \"import sys,json; d=json.load\\(sys.stdin\\); print\\('源数量:', len\\(d\\)\\); [print\\(f\\\\\"  {s['name']:14s} post_count={s.get\\('post_count'\\)}\\\\\"\\) for s in d[:8]]\")",
+      "Bash(.venv/bin/python -c \"import PIL; print\\('Pillow', PIL.__version__\\)\")",
+      "Read(//System/Library/Fonts/**)",
+      "Bash(.venv/bin/python -c \"import json; json.load\\(open\\('extension/manifest.json'\\)\\); print\\('manifest.json 合法'\\)\")",
+      "Bash(xargs sed -i '' 's/gray-/neutral-/g')",
+      "Bash(xargs sed -i '' 's/sky-/blue-/g')"
+    ]
+  }
+}

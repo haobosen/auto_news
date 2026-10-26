@@ -1,0 +1,5 @@
+fastapi>=0.100
+uvicorn>=0.23
+httpx>=0.24
+beautifulsoup4>=4.12
+apscheduler>=3.10
